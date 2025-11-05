@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "ConsoleBankApp/1.0.0": {
+        "runtime": {
+          "ConsoleBankApp.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "ConsoleBankApp/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
