@@ -1,10 +1,22 @@
 ﻿using System;
+using System.Runtime.InteropServices;
 using System.Security.Cryptography.X509Certificates;
 
 namespace ConsoleBankApp;
 
 class Program
 {
+    // Used to store username entered by user
+    private string username;
+    // Used to store email entered by user
+    private string email;
+    // Used to store age entered by user
+    private int age;
+    // Used to store mobile number entered by user
+    private int mobileNumber;
+    // Used to store password entered by user
+    private string password;
+
     public void Main()
     {
         // User greeted when opening application
@@ -47,16 +59,7 @@ class Program
     }
     public void NewUser()
     {
-        // Used to store username entered by user
-        string username;
-        // Used to store email entered by user
-        string email;
-        // Used to store age entered by user
-        int age;
-        // Used to store mobile number entered by user
-        int mobileNumber;
-        // Used to store password entered by user
-        string password;
+
         // Asks user to enter a new username
         Console.WriteLine("Please enter a new username for your account:");
         // username set to user input
@@ -68,16 +71,47 @@ class Program
         // Asks user to enter age
         Console.WriteLine("Enter your age:");
         // age set to user input
-        age = int .Parse(Console.ReadLine());
+        age = int.Parse(Console.ReadLine());
         // Asks user to enter mobile number
         Console.WriteLine("Enter your mobile number:");
         // mobileNumber set to user input
-        mobileNumber = int .Parse(Console.ReadLine());
+        mobileNumber = int.Parse(Console.ReadLine());
         // Asks user to enter a password
         Console.WriteLine("Enter a password:");
         // password set to user input
         password = Console.ReadLine();
         // Relays information entered to user minus the password
         Console.WriteLine($"Your information is - Username: {username} Email: {email} Age: {age} Mobile: {mobileNumber}");
+    }
+
+    public void ExsistingUser()
+    {
+        bool correctUser = false;
+
+        Console.WriteLine("You have selected Sign In!");
+        Console.WriteLine("Please enter your username:");
+
+        do
+            if (Console.ReadLine() == username)
+            {
+                Console.WriteLine("The username entered is correct!");
+            }
+            else if (Console.ReadLine() != username)
+            {
+                Console.WriteLine("The username you have entered is not valid!");
+                Console.WriteLine("Please select an option from below:");
+                Console.WriteLine("1. Try Again");
+                Console.WriteLine("2. Exit Application");
+
+                string option = Console.ReadLine();
+
+                switch(option)
+                {
+                    case "1":
+                        Console.WriteLine("Please try entering");
+                        break;
+                }    
+            }
+        while (correctUser != true);
     }
 }
