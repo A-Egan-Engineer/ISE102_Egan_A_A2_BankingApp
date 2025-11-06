@@ -1,33 +1,27 @@
 ﻿using System;
+using System.Globalization;
 using System.Runtime.InteropServices;
 using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
 
 namespace ConsoleBankApp;
 
-class Program
+class AppEntry
 {
-    // Used to store username entered by user
-    static private string username;
-    // Used to store email entered by user
-    static private string email;
-    // Used to store age entered by user
-    static private int age;
-    // Used to store mobile number entered by user
-    static private int mobileNumber;
-    // Used to store password entered by user
-    static private string password;
-
-    static void Main()
+    static void Main(string[] args)
     {
         // User greeted when opening application
         Console.WriteLine("Welcome to the Banking App");
         // Call UserOption function to allow user to select if new or exsisting
-        UserOption();
-        ExsistingUser();
+        UserWelcome.UserOption();
+        SignUpClass.SignUp();
+        LoginClass.Login();
         Console.ReadLine();
     }
+}
 
+class UserWelcome
+{
    static public void UserOption()
     {
         bool validOption = false;
@@ -37,31 +31,31 @@ class Program
             // Asks user to select one of the below options
             Console.WriteLine("Enter one of the options below:");
             // Option to create new account as new user
-            Console.WriteLine("1. Enter 'New User' create new account");
+            Console.WriteLine("1. New User - Create New Account");
             // Option to Sign In as an exsisiting user
-            Console.WriteLine("2. Enter 'Existing User' to Sign In");
+            Console.WriteLine("2. Exsiting User - Sign In");
             // Option to exit application
-            Console.WriteLine("3. Enter 'Exit' to exit application");
+            Console.WriteLine("3. Exit Application");
             // Sets option string to entered option
             string option = Console.ReadLine();
             // Switch statement reads user input to select option
             switch (option)
             {
                 // Asks user to create new account calling NewUser() function
-                case "New User":
+                case "1":
                     Console.WriteLine("You have selected 'New User'");
                     validOption = true;
-                    NewUser();
                     break;
                 // Asks use to Sign In by calling SignIn() function
-                case "Exsisting User":
+                case "2":
                     Console.WriteLine("You have selected 'Exsisting User'");
                     validOption = true;
                     break;
                 // Exits application when 'Exit' is input
-                case "Exit":
+                case "3":
                     Console.WriteLine("You have selected to Exit the Application!");
-                    Environment.Exit(0);
+                    Console.WriteLine("Thank you for using our banking app!");
+                    ExitApp.CloseApp();
                     break;
                 default:
                     Console.WriteLine("The input is invalid, please try again!");
@@ -70,7 +64,22 @@ class Program
         }
         while (validOption != true);
     }
-    static public void NewUser()
+}
+
+class SignUpClass
+{
+    // Used to store username entered by user
+    static public string username;
+    // Used to store email entered by user
+    static public string email;
+    // Used to store age entered by user
+    static public int age;
+    // Used to store mobile number entered by user
+    static public int mobileNumber;
+    // Used to store password entered by user
+    static public string password;
+
+    static public void SignUp()
     {
 
         // Asks user to enter a new username
@@ -94,68 +103,110 @@ class Program
         // password set to user input
         password = Console.ReadLine();
         // Relays information entered to user minus the password
-        Console.WriteLine($"Your information is - Username: {username} Email: {email} Age: {age} Mobile: {mobileNumber}");
+        Console.WriteLine($"Account registration successful!\n");
+        Console.WriteLine("Please Login using your registered information!\n");
     }
+}
 
-    static public async Task ExsistingUser()
+class LoginClass
+{
+    static public string storedUsername = SignUpClass.username;
+    static public string storedPassword = SignUpClass.password;
+
+    static public void Login()
     {
-        // bool used to verify correct username
-        bool correctUser = false;
-        // Prompts user to enter username
-        Console.WriteLine("You have selected Sign In!");
-        Console.WriteLine("Please enter your username:");
-        // While username is not correct, continue to ask for username or allow user to exit application
+        int maxAttempts = 3;
+        bool authentication = false;
+        bool validUser = false;
+
         do
-            // If user enters correct username, alert user the username is correct
-            if (Console.ReadLine() == username)
+        {
+            Console.WriteLine("Please enter your username:");
+
+            if (Console.ReadLine() == storedUsername)
             {
-                Console.WriteLine("The username entered is correct!");
-                // Sets correctUser to true to allow exit of do-while loop
-                correctUser = true;
+                Console.WriteLine("Please enter your password:");
+                validUser = true;
             }
-            else
+            else if (!validUser)
             {
-                // Gives the user the option of trying again or exiting application after invalid username input
-                Console.WriteLine("The username you have entered is not valid!");
-                Console.WriteLine("Please select an option from below:");
-                Console.WriteLine("1. Try Again");
+                Console.WriteLine("Username entered is not registered!");
+                Console.WriteLine("Select one of the options below:");
+                Console.WriteLine("1. Try Username Again");
                 Console.WriteLine("2. Exit Application");
-                // Reads user input to verify the option they have selected
+
                 string option = Console.ReadLine();
-                // Switch statement to handle user decision to try again or exit the application
+
                 switch (option)
                 {
-                    // Runs when user inputs '1' as repsonse, allowing the user to try again
                     case "1":
-                        Console.WriteLine("Please try entering your username again:");
+                        Console.WriteLine("You have selected 'Try Username Again'");
                         break;
-                    // Exits application when user inputs '2' as response, application closes after 5 seconds
                     case "2":
+                        Console.WriteLine("You have selected 'Exit Application'");
                         Console.WriteLine("Thank you for using our banking app!");
-                        Console.WriteLine("The Application will exit in:");
-                        Console.WriteLine(5);
-                        await
-                        OneSec();    
-                        Console.WriteLine(4);
-                        await
-                        OneSec();
-                        Console.WriteLine(3);
-                        await
-                        OneSec();
-                        Console.WriteLine(2);
-                        await
-                        OneSec();
-                        Console.WriteLine(1);
-                        await 
-                        OneSec();
-                        Environment.Exit(0);
+                        ExitApp.CloseApp();
                         break;
+                }
 
+            }
+        } while (!validUser);
+
+        for (int attempts = 1; attempts < maxAttempts;)
+        {
+            do
+            {
+                if (validUser = true && Console.ReadLine() == storedPassword)
+                {
+                    Console.WriteLine("The username and password entered are valid!");
+                    authentication = true;
+                }
+                else
+                {
+                    if (attempts < maxAttempts)
+                    {
+                        attempts++;
+                        Console.WriteLine($"Incorrect password! You have {maxAttempts - (attempts - 1)} attempt(s) remaining!");
+                        Console.WriteLine("Please enter your password:");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Too many inncorect attempts password attempts!");
+                        ExitApp.CloseApp();
+                    }
                 }
             }
-        // Loop continues for as long as the username is incorrect (Unless user decides to exit application after failed attempt)
-        while (correctUser != true);
+            while (!authentication);
+        }    
     }
+}
+
+class ExitApp
+{
+    static public async void CloseApp()
+    {
+        Console.WriteLine("The app will close in:");
+        Console.WriteLine(5);
+        await
+        TimeDelay.OneSec();
+        Console.WriteLine(4);
+        await
+        TimeDelay.OneSec();
+        Console.WriteLine(3);
+        await
+        TimeDelay.OneSec();
+        Console.WriteLine(2);
+        await
+        TimeDelay.OneSec();
+        Console.WriteLine(1);
+        await
+        TimeDelay.OneSec();
+        Environment.Exit(0);
+    }
+}
+
+class TimeDelay
+{
     // Delay function to delay 1 second before continuing code execution
     static public async Task OneSec()
     {
