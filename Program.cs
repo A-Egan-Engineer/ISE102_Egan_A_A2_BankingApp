@@ -11,7 +11,7 @@ class AppEntry
     static void Main(string[] args)
     {
         // User greeted when opening application
-        Console.WriteLine("Welcome to the Banking App");
+        Console.WriteLine("Welcome to the Banking App\n");
         // Call UserOption function to allow user to select if new or exsisting
         UserWelcome.UserOption();
         SignUpClass.SignUp();
@@ -24,18 +24,19 @@ class UserWelcome
 {
    static public void UserOption()
     {
-        bool validOption = false;
+        bool optionOne = false;
+        bool optionTwo = false;
 
         do
         {
             // Asks user to select one of the below options
-            Console.WriteLine("Enter one of the options below:");
+            Console.WriteLine("Enter one of the options below:\n");
             // Option to create new account as new user
-            Console.WriteLine("1. New User - Create New Account");
+            Console.WriteLine("1. New User - Create New Account\n");
             // Option to Sign In as an exsisiting user
-            Console.WriteLine("2. Exsiting User - Sign In");
+            Console.WriteLine("2. Exsiting User - Sign In\n");
             // Option to exit application
-            Console.WriteLine("3. Exit Application");
+            Console.WriteLine("3. Exit Application\n");
             // Sets option string to entered option
             string option = Console.ReadLine();
             // Switch statement reads user input to select option
@@ -43,26 +44,27 @@ class UserWelcome
             {
                 // Asks user to create new account calling NewUser() function
                 case "1":
-                    Console.WriteLine("You have selected 'New User'");
-                    validOption = true;
+                    Console.WriteLine("You have selected 'New User'\n");
+                    optionOne = true;
                     break;
                 // Asks use to Sign In by calling SignIn() function
                 case "2":
-                    Console.WriteLine("You have selected 'Exsisting User'");
-                    validOption = true;
+                    Console.WriteLine("You have selected 'Exsisting User'\n");
+                    optionTwo = true;
+                    LoginClass.Login();
                     break;
                 // Exits application when 'Exit' is input
                 case "3":
-                    Console.WriteLine("You have selected to Exit the Application!");
-                    Console.WriteLine("Thank you for using our banking app!");
+                    Console.WriteLine("You have selected to Exit the Application!\n");
+                    Console.WriteLine("Thank you for using our banking app!\n");
                     ExitApp.CloseApp();
                     break;
                 default:
-                    Console.WriteLine("The input is invalid, please try again!");
+                    Console.WriteLine("The input is invalid, please try again!\n");
                     break;
             }
         }
-        while (validOption != true);
+        while (!optionOne || !optionTwo );
     }
 }
 
@@ -83,23 +85,23 @@ class SignUpClass
     {
 
         // Asks user to enter a new username
-        Console.WriteLine("Please enter a new username for your account:");
+        Console.WriteLine("Please enter a new username for your account:\n");
         // username set to user input
         username = Console.ReadLine();
         // Asks user to enter an email
-        Console.WriteLine("Enter your email:");
+        Console.WriteLine("Enter your email:\n");
         // email set to user input
         email = Console.ReadLine();
         // Asks user to enter age
-        Console.WriteLine("Enter your age:");
+        Console.WriteLine("Enter your age:\n");
         // age set to user input
         age = int.Parse(Console.ReadLine());
         // Asks user to enter mobile number
-        Console.WriteLine("Enter your mobile number:");
+        Console.WriteLine("Enter your mobile number:\n");
         // mobileNumber set to user input
         mobileNumber = int.Parse(Console.ReadLine());
         // Asks user to enter a password
-        Console.WriteLine("Enter a password:");
+        Console.WriteLine("Enter a password:\n");
         // password set to user input
         password = Console.ReadLine();
         // Relays information entered to user minus the password
@@ -119,32 +121,32 @@ class LoginClass
         bool authentication = false;
         bool validUser = false;
 
-        do
-        {
-            Console.WriteLine("Please enter your username:");
+        Console.WriteLine("Please enter your username:\n");
 
+        do
+        {       
             if (Console.ReadLine() == storedUsername)
             {
-                Console.WriteLine("Please enter your password:");
+                Console.WriteLine("Please enter your password:\n");
                 validUser = true;
             }
             else if (!validUser)
             {
-                Console.WriteLine("Username entered is not registered!");
-                Console.WriteLine("Select one of the options below:");
-                Console.WriteLine("1. Try Username Again");
-                Console.WriteLine("2. Exit Application");
+                Console.WriteLine("Username entered is not registered!\n");
+                Console.WriteLine("Select one of the options below:\n");
+                Console.WriteLine("1. Try Username Again\n");
+                Console.WriteLine("2. Exit Application\n");
 
                 string option = Console.ReadLine();
 
                 switch (option)
                 {
                     case "1":
-                        Console.WriteLine("You have selected 'Try Username Again'");
+                        Console.WriteLine("You have selected 'Try Username Again'\n");
                         break;
                     case "2":
-                        Console.WriteLine("You have selected 'Exit Application'");
-                        Console.WriteLine("Thank you for using our banking app!");
+                        Console.WriteLine("You have selected 'Exit Application'\n");
+                        Console.WriteLine("Thank you for using our banking app!\n");
                         ExitApp.CloseApp();
                         break;
                 }
@@ -158,7 +160,7 @@ class LoginClass
             {
                 if (validUser = true && Console.ReadLine() == storedPassword)
                 {
-                    Console.WriteLine("The username and password entered are valid!");
+                    Console.WriteLine("The username and password entered are valid!\n");
                     authentication = true;
                 }
                 else
@@ -166,12 +168,12 @@ class LoginClass
                     if (attempts < maxAttempts)
                     {
                         attempts++;
-                        Console.WriteLine($"Incorrect password! You have {maxAttempts - (attempts - 1)} attempt(s) remaining!");
-                        Console.WriteLine("Please enter your password:");
+                        Console.WriteLine($"Incorrect password! You have {maxAttempts - (attempts - 1)} attempt(s) remaining!\n");
+                        Console.WriteLine("Please enter your password:\n");
                     }
                     else
                     {
-                        Console.WriteLine("Too many inncorect attempts password attempts!");
+                        Console.WriteLine("Too many inncorect attempts password attempts!\n");
                         ExitApp.CloseApp();
                     }
                 }
@@ -185,20 +187,20 @@ class ExitApp
 {
     static public async void CloseApp()
     {
-        Console.WriteLine("The app will close in:");
-        Console.WriteLine(5);
+        Console.WriteLine("The app will close in:\n");
+        Console.WriteLine("5\n");
         await
         TimeDelay.OneSec();
-        Console.WriteLine(4);
+        Console.WriteLine("4\n");
         await
         TimeDelay.OneSec();
-        Console.WriteLine(3);
+        Console.WriteLine("3\n");
         await
         TimeDelay.OneSec();
-        Console.WriteLine(2);
+        Console.WriteLine("2\n");
         await
         TimeDelay.OneSec();
-        Console.WriteLine(1);
+        Console.WriteLine("1\n");
         await
         TimeDelay.OneSec();
         Environment.Exit(0);
