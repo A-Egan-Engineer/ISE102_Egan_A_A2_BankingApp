@@ -1,0 +1,15 @@
+D:\GitHub Projects\ISE102_A2_Egan_A_BankApp\bin\Debug\net8.0\ConsoleBankApp.exe
+D:\GitHub Projects\ISE102_A2_Egan_A_BankApp\bin\Debug\net8.0\ConsoleBankApp.deps.json
+D:\GitHub Projects\ISE102_A2_Egan_A_BankApp\bin\Debug\net8.0\ConsoleBankApp.runtimeconfig.json
+D:\GitHub Projects\ISE102_A2_Egan_A_BankApp\bin\Debug\net8.0\ConsoleBankApp.dll
+D:\GitHub Projects\ISE102_A2_Egan_A_BankApp\bin\Debug\net8.0\ConsoleBankApp.pdb
+D:\GitHub Projects\ISE102_A2_Egan_A_BankApp\obj\Debug\net8.0\ConsoleBankApp.GeneratedMSBuildEditorConfig.editorconfig
+D:\GitHub Projects\ISE102_A2_Egan_A_BankApp\obj\Debug\net8.0\ConsoleBankApp.AssemblyInfoInputs.cache
+D:\GitHub Projects\ISE102_A2_Egan_A_BankApp\obj\Debug\net8.0\ConsoleBankApp.AssemblyInfo.cs
+D:\GitHub Projects\ISE102_A2_Egan_A_BankApp\obj\Debug\net8.0\ConsoleBankApp.csproj.CoreCompileInputs.cache
+D:\GitHub Projects\ISE102_A2_Egan_A_BankApp\obj\Debug\net8.0\ConsoleBankApp.sourcelink.json
+D:\GitHub Projects\ISE102_A2_Egan_A_BankApp\obj\Debug\net8.0\ConsoleBankApp.dll
+D:\GitHub Projects\ISE102_A2_Egan_A_BankApp\obj\Debug\net8.0\refint\ConsoleBankApp.dll
+D:\GitHub Projects\ISE102_A2_Egan_A_BankApp\obj\Debug\net8.0\ConsoleBankApp.pdb
+D:\GitHub Projects\ISE102_A2_Egan_A_BankApp\obj\Debug\net8.0\ConsoleBankApp.genruntimeconfig.cache
+D:\GitHub Projects\ISE102_A2_Egan_A_BankApp\obj\Debug\net8.0\ref\ConsoleBankApp.dll
