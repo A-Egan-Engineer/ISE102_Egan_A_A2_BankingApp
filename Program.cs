@@ -62,6 +62,7 @@ class UserWelcome
                     Console.WriteLine("You have selected to Exit the Application!\n");
                     Console.WriteLine("Thank you for using our banking app!\n");
                     ExitApp.CloseApp();
+                    Console.ReadLine();
                     break;
                 default:
                     Console.WriteLine("The input is invalid, please try again!\n");
@@ -263,7 +264,7 @@ public class Dashboard
                     case "2": DoDeposit(); break;
                     case "3": DoWithdraw(); break;
                     case "4": DoTransfer(); break;
-                    case "5": ExitApp.CloseApp(); break;
+                    case "5": ExitApp.CloseApp(); Console.ReadLine(); break;
                     default:
                         Console.WriteLine("Please choose 1-5.\n");
                         break;
