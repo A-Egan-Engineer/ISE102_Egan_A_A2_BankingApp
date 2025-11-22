@@ -1,12 +1,4 @@
-﻿using System;
-using System.ComponentModel;
-using System.Globalization;
-using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
-using System.Runtime.InteropServices.Marshalling;
-using System.Security.Cryptography;
-using System.Security.Cryptography.X509Certificates;
-using System.Threading.Tasks;
+﻿using System.Globalization;
 
 namespace ConsoleBankApp;
 
@@ -40,7 +32,7 @@ class UserWelcome
             // Option to exit application
             Console.WriteLine("3. Exit Application\n");
             // Sets option string to entered option
-            string option = Console.ReadLine();
+            string option = Console.ReadLine()!;
             Console.WriteLine();
             // Switch statement reads user input to select option
             switch (option)
@@ -76,15 +68,15 @@ class UserWelcome
 class SignUpClass
 {
     // Used to store username entered by user
-    static public string username;
+    static public string ?username;
     // Used to store email entered by user
-    static public string email;
+    static public string ?email;
     // Used to store age entered by user
     static public int age;
     // Used to store mobile number entered by user
     static public int mobileNumber;
     // Used to store password entered by user
-    static public string password;
+    static public string ?password;
 
     static public void SignUp()
     {
@@ -102,12 +94,12 @@ class SignUpClass
         // Asks user to enter age
         Console.WriteLine("Enter your age:\n");
         // age set to user input
-        age = int.Parse(Console.ReadLine());
+        age = int.Parse(Console.ReadLine()!);
         Console.WriteLine();
         // Asks user to enter mobile number
         Console.WriteLine("Enter your mobile number:\n");
         // mobileNumber set to user input
-        mobileNumber = int.Parse(Console.ReadLine());
+        mobileNumber = int.Parse(Console.ReadLine()!);
         Console.WriteLine();
         // Asks user to enter a password
         Console.WriteLine("Enter a password:\n");
@@ -122,8 +114,8 @@ class SignUpClass
 
 class LoginClass
 {
-    static public string storedUsername = SignUpClass.username;
-    static public string storedPassword = SignUpClass.password;
+    static public string storedUsername = SignUpClass.username!;
+    static public string storedPassword = SignUpClass.password!;
 
     static public void Login()
     {
@@ -131,7 +123,7 @@ class LoginClass
         bool authentication = false;
         bool validUser = false;
 
-        Dashboard dashboard = new Dashboard(SignUpClass.username, "01010101");
+        Dashboard dashboard = new Dashboard(SignUpClass.username!, "01010101");
 
         Console.WriteLine("Please enter your username:\n");
 
@@ -150,7 +142,7 @@ class LoginClass
                 Console.WriteLine("1. Try Username Again\n");
                 Console.WriteLine("2. Exit Application\n");
 
-                string option = Console.ReadLine();
+                string option = Console.ReadLine()!;
 
                 switch (option)
                 {
