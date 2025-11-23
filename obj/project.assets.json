@@ -8,19 +8,19 @@
     "net8.0": []
   },
   "packageFolders": {
-    "/home/devlord/.nuget/packages/": {}
+    "/home/ae-dev/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/media/devlord/Additional/GitProjects/ISE102_Egan_A_A2_BankingApp/ConsoleBankApp.csproj",
+      "projectUniqueName": "/home/ae-dev/Documents/CS_Projects/ISE102_Egan_A_A2_BankingApp/ConsoleBankApp.csproj",
       "projectName": "ConsoleBankApp",
-      "projectPath": "/media/devlord/Additional/GitProjects/ISE102_Egan_A_A2_BankingApp/ConsoleBankApp.csproj",
-      "packagesPath": "/home/devlord/.nuget/packages/",
-      "outputPath": "/media/devlord/Additional/GitProjects/ISE102_Egan_A_A2_BankingApp/obj/",
+      "projectPath": "/home/ae-dev/Documents/CS_Projects/ISE102_Egan_A_A2_BankingApp/ConsoleBankApp.csproj",
+      "packagesPath": "/home/ae-dev/.nuget/packages/",
+      "outputPath": "/home/ae-dev/Documents/CS_Projects/ISE102_Egan_A_A2_BankingApp/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/devlord/.nuget/NuGet/NuGet.Config"
+        "/home/ae-dev/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -38,11 +38,6 @@
         "warnAsError": [
           "NU1605"
         ]
-      },
-      "restoreAuditProperties": {
-        "enableAudit": "true",
-        "auditLevel": "low",
-        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -64,7 +59,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.416/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.121/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "NPNP0OTVzQI=",
+  "dgSpecHash": "9uHyrSrW8UdIK7BJszfe/kaC1u8pcwQG3UeKDMandAMrcdqiGOvfOsa332u21Q4WnGTwgLokTfWrYvf1K5gtXQ==",
   "success": true,
-  "projectFilePath": "/media/devlord/Additional/GitProjects/ISE102_Egan_A_A2_BankingApp/ConsoleBankApp.csproj",
+  "projectFilePath": "/home/ae-dev/Documents/CS_Projects/ISE102_Egan_A_A2_BankingApp/ConsoleBankApp.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
