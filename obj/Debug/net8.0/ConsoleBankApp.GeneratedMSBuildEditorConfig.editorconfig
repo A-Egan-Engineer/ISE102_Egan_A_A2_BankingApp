@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = ConsoleBankApp
-build_property.ProjectDir = /media/devlord/Additional/GitProjects/ISE102_Egan_A_A2_BankingApp/
+build_property.ProjectDir = /home/ae-dev/Documents/CS_Projects/ISE102_Egan_A_A2_BankingApp/
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
