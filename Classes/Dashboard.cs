@@ -2,6 +2,9 @@ using System.Globalization;
 
 public class Dashboard
 {
+
+    CreditCheck creditCheck = new CreditCheck();
+
     private readonly string _displayName;
     private readonly List<Account> _accounts;
 
@@ -20,7 +23,8 @@ public class Dashboard
             Console.WriteLine("2: Deposit");
             Console.WriteLine("3: Withdraw");
             Console.WriteLine("4: Transfer");
-            Console.WriteLine("5: Quit");
+            Console.WriteLine("5: Check Credit Score");
+            Console.WriteLine("6: Quit");
             Console.Write("Select option: ");
             var choice = Console.ReadLine();
             Console.WriteLine();
@@ -33,9 +37,10 @@ public class Dashboard
                     case "2": DoDeposit(); break;
                     case "3": DoWithdraw(); break;
                     case "4": DoTransfer(); break;
-                    case "5": ExitApp.CloseApp(); Console.ReadLine(); break;
+                    case "5": creditCheck.CreditScore(); break;
+                    case "6": ExitApp.CloseApp(); Console.ReadLine(); break;
                     default:
-                        Console.WriteLine("Please choose 1-5.\n");
+                        Console.WriteLine("Please choose 1-6.\n");
                         break;
                 }
             }
