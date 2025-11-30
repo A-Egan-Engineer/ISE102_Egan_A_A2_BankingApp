@@ -2,8 +2,7 @@ using System.Globalization;
 
 public class Dashboard
 {
-
-    CreditCheck creditCheck = new CreditCheck();
+    Loans Loans = new Loans(); // Instance of Loans class to access loan functionalities
 
     private readonly string _displayName;
     private readonly List<Account> _accounts;
@@ -23,7 +22,7 @@ public class Dashboard
             Console.WriteLine("2: Deposit");
             Console.WriteLine("3: Withdraw");
             Console.WriteLine("4: Transfer");
-            Console.WriteLine("5: Check Credit Score");
+            Console.WriteLine("5: Loans Portal");
             Console.WriteLine("6: Quit");
             Console.Write("Select option: ");
             var choice = Console.ReadLine();
@@ -37,7 +36,7 @@ public class Dashboard
                     case "2": DoDeposit(); break;
                     case "3": DoWithdraw(); break;
                     case "4": DoTransfer(); break;
-                    case "5": creditCheck.CreditScore(); break;
+                    case "5": Loans.LoanWelcome(); break;
                     case "6": ExitApp.CloseApp(); Console.ReadLine(); break;
                     default:
                         Console.WriteLine("Please choose 1-6.\n");

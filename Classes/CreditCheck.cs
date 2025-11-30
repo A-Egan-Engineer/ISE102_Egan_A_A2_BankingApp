@@ -1,30 +1,31 @@
-public class CreditCheck : SignUpClass
+public class CreditCheck 
 {
-    int creditScore = Random.Shared.Next(0, 1201);
+    string username = LoginClass.storedUsername; // Get the logged-in username
+    int creditRating = Random.Shared.Next(0, 1201); // Generates a random credit score between 0 and 1200
 
-        public void CreditScore()
+        public void CreditScore() // Method to display credit score
     {
-        Console.WriteLine($"Welcome to your credit score assessment {username}!\n");
+        Console.WriteLine($"Welcome to your credit score assessment {username}!\n"); // Welcomes user to credit score assessment
         
-        if (creditScore >= 0 && creditScore <= 459)
+        if (creditRating >= 0 && creditRating <= 459) // Determines credit rating based on score
         {
-            Console.WriteLine($"Your credit score is {creditScore}. You have below average credit rating!\n");
+            Console.WriteLine($"Your credit score is {creditRating}. You have below average credit rating!\n"); // Displays credit score and rating
         }
-        else if (creditScore >= 460 && creditScore <= 660)
+        else if (creditRating >= 460 && creditRating <= 660) // Determines credit rating based on score
         {
-            Console.WriteLine($"Your credit score is {creditScore}. You have average credit.\n");
+            Console.WriteLine($"Your credit score is {creditRating}. You have average credit.\n"); // Displays credit score and rating
         }
-        else if (creditScore >= 661 && creditScore <= 734)
+        else if (creditRating >= 661 && creditRating <= 734) // Determines credit rating based on score
         {
-            Console.WriteLine($"Your credit score is {creditScore}. You have good credit.\n");
+            Console.WriteLine($"Your credit score is {creditRating}. You have good credit.\n"); // Displays credit score and rating
         }
-        else if (creditScore >= 735 && creditScore <= 852)
+        else if (creditRating >= 735 && creditRating <= 852) // Determines credit rating based on score
         {
-            Console.WriteLine($"Your credit score is {creditScore}. You have very good credit.\n");
+            Console.WriteLine($"Your credit score is {creditRating}. You have very good credit.\n"); // Displays credit score and rating
         }
-        else if (creditScore >= 853 && creditScore <= 1200)
+        else if (creditRating >= 853 && creditRating <= 1200) // Determines credit rating based on score
         {
-            Console.WriteLine($"Your credit score is {creditScore}. You have excellent credit!\n");
+            Console.WriteLine($"Your credit score is {creditRating}. You have excellent credit!\n"); // Displays credit score and rating
         }
     }
 }
